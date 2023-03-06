@@ -6,11 +6,15 @@ describe('testqastudio ', function () {
         cy.get('.summary > .cart > .product-button-wrapper > .quantity > .increase').click();
         cy.get('.summary > .cart > .product-button-wrapper > .quantity > .increase').click();
         cy.get('.summary > .cart > .product-button-wrapper > .single_add_to_cart_button').click();
-        cy.wait(5000);
-        cy.get('#cart-modal > .off-modal-layer').click();
+        cy.wait(8000);
+        cy.reload();
+        cy.get('#menu-top > .menu-item-home > a').click();
         cy.get('.post-11337 > .product-inner > .product-thumbnail > .woocommerce-LoopProduct-link > .attachment-woocommerce_thumbnail').click();
         cy.get('.summary > .cart > .product-button-wrapper > .single_add_to_cart_button').click();
-        cy.get('.checkout').click();
+        cy.wait(8000);
+        cy.get('.woocommerce-mini-cart__buttons > [href="https://sh3910517.c.had.su/cart/"]').click();
+        cy.wait(8000);
+        cy.get('.checkout-button').click();
         cy.get('#billing_first_name').type('Елена');
         cy.get('#billing_last_name').type('Немцева');
         cy.get('#billing_address_1').type('9, Комсомольская');
